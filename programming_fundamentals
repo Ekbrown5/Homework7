@@ -1,0 +1,99 @@
+// Write a ~1 sentence summary for each one//
+
+// Dry: Avoid repeating the same information.
+// KISS: Make your coding as simple as possible.
+// Avoid Creating a YAGNI: Dont add things until it is needed.
+// Do the simplest thing that could possibly work: JUst like KISS, you're trying to keep things as simple as possible
+// Don't make me think: SImplify your programing so it is easy to understand.
+// Write code for the maintainer:  Write the code as if you are writing it for a stranger to understand.
+// Single responsibility principle: A module should be responsible to one and only one actor.
+// Avoid premature optimization: Dont optimise your code unless you need to.
+// Seperation of concerns: Make sure to separate programs into different sections.
+
+
+
+// Which ones suprise you (if any)?
+
+//None really suprise me, all of them make a lot of sence.
+
+
+
+// Which one is giving you the most struggle.
+
+// I am struggling with the KISS concept.  I stuggle figuring out the simplest way of doing things sometimes.
+
+
+//Comment each line of this code and describe what it is doing. Feel free to run this code and add console.logs to help you figure it out:
+
+
+const f = 1 => {
+// Define a function 'f' that takes a parameter 'l'
+
+let es = 0, p = 0, c = 1, n = 0;
+// Initializes variables: es (even sum), p (previous), c (current), and n (next
+
+while (c <= 1) {
+// the loop will continue until the 'c' is greater than 'l'
+
+n = c + p;
+// Calculate the next Fibonacci number and update 'n'
+
+[c, p] = [n, c];
+// Update 'c' and 'p' using destruct
+
+es += (c % 2 === 0) ? c : 0;
+
+// Checks if the number is even, and if it is, add it to 'es'
+
+return es;
+// Returns the sum of even numbers up to '1'
+
+console.log(f(55));
+// Calls 'f' with the argument 55 and logs it to the console
+
+
+
+// At first we may strive for the shortest code possible. But we really should be striving for readable code that is easy to maintain. Compare the same solution with more semantic variable names (feel free to use this one to help you figure out what is happening in this function:
+
+
+const f2 = (limit) => {
+//defines the function 'f2' that takes a parameter 'limit
+
+let evenSum = 0;
+let previous = 0;
+let current = 1;
+// Initializes 'evenSum', 'previous', and 'current'
+
+while (current <= limit) {
+// uses a while loop until 'current' is greater than 'limit'
+
+let next = current + previous;
+// adds the next number and updates 'next
+
+previous = current;
+current = next;
+// updates the 'previous' and 'current' based on the number
+
+if (current % 2 === 0) {
+    evenSum += current;
+// Checks if 'current' is even and if it is then it will ad it to 'evenSum'
+
+return evenSum
+// returns the sum of the even numbers up to 'limit'
+
+console.log(f2(55))
+// again calls the function 'f2' with the argument 55 and logs it to the console
+
+
+
+// In keeping with one of our programming principals (write code for the maintainer): What would have been a more semantic name for this function (hint: this is a problem we had for either lab or hw and is considered a classic ) - are there any other variable names or things that would make this code easier to read and understand?
+
+// I am not sure of this answer
+
+// If you started a new job and your project was to expand the functionality of this function by allowing a second argument and then based on that second argument, returning the sum of even or odd numbers, which code would you rather start working with f or f2?
+
+// 'f2' is easier to read and understand
+
+// Finally, the 'shorter' code style doesn't use semi-colons, except for the fourth line. Remove this semi-colon! Run the code, is this semi-colon necessary?
+
+// no, the semi-colon is not necessary. 
